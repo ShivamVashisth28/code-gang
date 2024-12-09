@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 
 const SignupPage = () => {
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [userName, setUserName] = useState('');
+  const [leetcodeUserName, setLeetcodeUserName] = useState('');
+  const [githubUserName, setGithubUserName] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!name || !email || !password || !confirmPassword) {
+    if (!name || !password ) {
       setError('Please fill in all fields');
     } else if (password !== confirmPassword) {
       setError('Passwords do not match');
@@ -39,15 +40,42 @@ const SignupPage = () => {
               required
             />
           </div>
+
           <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-600">Email</label>
+            <label htmlFor="userName" className="block text-sm font-medium text-gray-600">User Name</label>
             <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              id="userName"
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
               className="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              placeholder="Enter your email"
+              placeholder="Create your username"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="leetcodeUsername" className="block text-sm font-medium text-gray-600">Leetcode Username</label>
+            <input
+              type="text"
+              id="leetcodeUsername"
+              value={leetcodeUserName}
+              onChange={(e) => setLeetcodeUserName(e.target.value)}
+              className="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              placeholder="Enter your Leetcode username"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="githubUsername" className="block text-sm font-medium text-gray-600">Github Username</label>
+            <input
+              type="text"
+              id="githubUsername"
+              value={githubUserName}
+              onChange={(e) => setGithubUserName(e.target.value)}
+              className="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              placeholder="Enter your Github username"
               required
             />
           </div>
@@ -63,18 +91,7 @@ const SignupPage = () => {
               required
             />
           </div>
-          <div className="mb-6">
-            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-600">Confirm Password</label>
-            <input
-              type="password"
-              id="confirmPassword"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              className="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              placeholder="Confirm your password"
-              required
-            />
-          </div>
+         
           <button
             type="submit"
             className="w-full py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition duration-200"
