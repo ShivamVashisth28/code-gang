@@ -49,8 +49,8 @@ function Profile() {
             <div className='m-2 border-2 border-black bg-white justify-center items-center flex'>
               {
                 data ? 
-                  <div>
-                      Questions Solved 
+                  <div className='text-3xl tracking-wide'>
+                     <div> Leetcode Questions Solved </div>
                       <br />
                       Total  : {data['totalSolved']}
                       <br />
