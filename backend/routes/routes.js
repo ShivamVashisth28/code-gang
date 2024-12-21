@@ -3,7 +3,7 @@ import bcrypt from "bcrypt"
 
 const router = Router()
 
-// this is the code
+
 
 let database = {
     'Shivam001':{
